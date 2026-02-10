@@ -72,7 +72,7 @@ h1.title {
     font-weight: 600;;
 }
 .price sup{
-    color: rgb(130, 130, 130);
+    color: rgb(0, 0, 0);
     font-family: "Mona Sans";
     font-size: 20px;
     position: relative;
