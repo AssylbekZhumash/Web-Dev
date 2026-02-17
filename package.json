@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@angular/core": "^21.1.4",
+    "@angular/forms": "^21.1.4",
+    "@angular/router": "^21.1.4"
+  }
+}
