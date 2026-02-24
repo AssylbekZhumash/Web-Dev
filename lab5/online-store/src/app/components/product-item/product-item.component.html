@@ -1,0 +1,51 @@
+<article class="card" [class.open]="openedShareId === product.id">
+  <div class="image-container">
+    <img [src]="selectedImage" [alt]="product.name" class="main-image" />
+
+    <button class="nav prev" (click)="prevImage($event)">&#10094;</button>
+    <button class="nav next" (click)="nextImage($event)">&#10095;</button>
+
+    <div class="thumbs">
+      <img
+        *ngFor="let img of allImages"
+        [src]="img"
+        [alt]="product.name"
+        [class.active]="selectedImage === img"
+        (click)="setImage(img)"
+      />
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="meta">
+      <span class="price">{{ product.price | number }} KZT</span>
+      <div class="rating">
+        <span class="stars">
+          <span *ngFor="let s of starStates"
+                [class.full]="s==='full'"
+                [class.half]="s==='half'"
+                [class.empty]="s==='empty'">★</span>
+        </span>
+        <span class="rating-num">{{ product.rating }}</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="like" (click)="like()" [class.animate]="animateLike">
+        🩷 {{ product.likes }}
+      </button>
+      <button class="del" (click)="requestDelete()">🗑️ Delete</button>
+
+      <div class="share">
+        <button (click)="toggleShare()">Share</button>
+        <div class="share-menu" *ngIf="openedShareId === product.id">
+          <button (click)="shareWhatsApp()">WhatsApp</button>
+          <button (click)="shareTelegram()">Telegram</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

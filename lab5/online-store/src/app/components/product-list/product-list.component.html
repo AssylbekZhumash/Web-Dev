@@ -1,0 +1,10 @@
+<p *ngIf="products.length === 0">No products in this category</p>
+
+<section class="grid" *ngIf="products.length > 0">
+  <app-product-item *ngFor="let p of products"
+                    [product]="p"
+                    [openedShareId]="openedShareId"
+                    (shareOpened)="setOpenedShare($event)"
+                    (delete)="onDelete($event)"
+  ></app-product-item>
+</section>

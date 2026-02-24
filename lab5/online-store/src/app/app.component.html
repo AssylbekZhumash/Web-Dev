@@ -1,0 +1,17 @@
+<h1>Online Store</h1>
+
+<nav class="cats">
+  <button *ngFor="let c of categories"
+          (click)="selectCategory(c.id)"
+          [class.active]="selectedCategoryId === c.id"
+  >
+    {{c.name}}
+  </button>
+</nav>
+
+<section *ngIf="selectedCategoryId; else welcome">
+  <app-product-list [products]="selectedProducts" (deleteProduct)="handleDelete($event)"></app-product-list>
+</section>
+<ng-template #welcome>
+  <p class="welcome">Select category to view products.</p>
+</ng-template>
