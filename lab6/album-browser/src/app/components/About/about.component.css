@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  padding: 40px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: 40px;
+}
+.info {
+  margin-top: 12px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #555;
+}
